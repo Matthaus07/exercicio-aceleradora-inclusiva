@@ -10,7 +10,7 @@ const App = () => {
 		{ nome: 'Carro', quantidade: 1 },
 	]);
 	const [inputValor, setinputValor] = useState('');
-	const [totalItemCount, setTotalItemCount] = useState(1);
+	const [totalDeItensDoProduto, setTotalDeItensDoProduto] = useState(1);
 
 	//Função para adicionar novo item no carrinho de compras
 	const adicionarNovoItemNoCarrinho = () => {
@@ -50,7 +50,7 @@ const App = () => {
 		const totalQuantidadeCarrinho = itens.reduce((total, item) => {
 			return total + item.quantidade;
 		}, 0);
-		setTotalItemCount(totalQuantidadeCarrinho);
+		setTotalDeItensDoProduto(totalQuantidadeCarrinho);
 	},[itens]);
 	
 	//UseEffect Observa e gerencia mudanças no estado do componente Leia mais em: https://bit.ly/3OuuZlL
@@ -89,7 +89,7 @@ const App = () => {
 				</div>
 				<div className="agroup-items">
 					<FontAwesomeIcon icon={faShoppingCart} />
-					<div className='total'>{totalItemCount}</div>
+					<div className='total'>{totalDeItensDoProduto}</div>
 				</div>
 			</div>
 		</div>
