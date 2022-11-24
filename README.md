@@ -1,24 +1,29 @@
 # carrinho-de-compras
-Start/final code for simple shopping list react project
+Lista com um método de carrinho de compras, como exercicio para a Aceleradora Inclusiva
 
 
-Run the starter code:
+Para startar o projeto carrinho_inicial
 
 ```
-- cd simple-shopping-list/starter
+- cd exercicio-aceleradora-inclusiva-main/carrinho_inicial
 
 - npm install
 
 - npm start
+
+- acessar no navegador: http://localhost:3000
 ```
 
-Run the starter code:
+Para startar o projeto carrinho_inicial
+
 
 ```
-- cd simple-shopping-list/final
+- cd exercicio-aceleradora-inclusiva-main/resolucao_att_item
 
 - npm install
 
 - npm start
+
+- acessar no navegador: http://localhost:3000
 ```
 
