@@ -18,16 +18,17 @@ const App = () => {
 			nome: inputValor,
 			quantidade: 1	
 			};
-		//Spread Operator(Tres pontinhos ...), responsável por interar e expandir um objeto interável em um array(lista).
+		//Spread Operator(Tres pontinhos ...), responsável por iterar e expandir um objeto interável em um array(lista).
 		const novaLista = [...itens, novoItem];
 		setItens(novaLista);
 		setinputValor('')
 	};
 
 	//Função para remover produto clicado no carrinho de compras
-	const removerItemDoCarrinho = index =>{
+	const removerProdutoDoCarrinho = posicaoItem =>{
 		//Array Filter é responsável por filtrar, de acordo com a implementação, itens de um array. Leia mais em: https://mzl.la/3EXrxNb
-		setItens(item => item.filter((_, i) => i !== index));
+		const removerProduto = itens.filter((_, index) => index !== posicaoItem)
+		setItens(removerProduto);
 	}
 
 	//Função para adicionar mais itens do produno no carrinho
@@ -45,7 +46,7 @@ const App = () => {
 	};
 	
 	//UseCallback retorna uma função memorizada. Leia mais em: https://bit.ly/3tX8Gf0
-	const calcularTotalDoCarrinho =useCallback(() => { 
+	const calcularTotalDoCarrinho = useCallback(() => { 
 		const totalQuantidadeCarrinho = itens.reduce((total, item) => {
 			return total + item.quantidade;
 		}, 0);
@@ -68,7 +69,7 @@ const App = () => {
 				<div className='item-list'>
 					{itens.map((item, index) => (
 						<div className='item-container'>
-							<div className='item-name'>
+							<div key={index} className='item-name'>
 								<span>{item.nome}</span>
 							</div>
 							<div className="agroup-items">
@@ -81,7 +82,7 @@ const App = () => {
 										<FontAwesomeIcon icon={faChevronRight}  onClick={()=>incrementarQuantidadeNoCarrinho(index)}/>
 									</button>
 								</div>
-								<FontAwesomeIcon icon={faTrash}  onClick={() =>removerItemDoCarrinho(index)}/>
+								<FontAwesomeIcon icon={faTrash}  onClick={() =>removerProdutoDoCarrinho(index)}/>
 							</div>
 						</div>
 					))}

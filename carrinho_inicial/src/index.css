@@ -141,7 +141,7 @@ input:focus {
   font-size: 12px;
   color: #ec645b;
   min-width: 70px;
-  justify-content: space-between;
+  justify-content: right;
 }
 
 button {
